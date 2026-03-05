@@ -1,0 +1,16 @@
+package http;
+
+import com.httpServer.core.HttpConnectionWorkerThread;
+
+public class HttpParsingException extends Exception {
+    private final HttpStatusCode errorCode;
+
+    public HttpParsingException(HttpStatusCode errorCode) {
+        super(errorCode.MESSAGE);
+        this.errorCode = errorCode;
+    }
+
+    public HttpStatusCode getErrorCode() {
+        return  errorCode;
+    }
+}
